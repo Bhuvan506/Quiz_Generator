@@ -14,7 +14,7 @@ const quizData = [
   {
     question: 'How many colours are there in rainbow?',
     id: 3,
-    options: ['100', '8', '7', '6'],
+    options: ['10', '8', '7', '6'],
     answer: '7',
   },
   {
@@ -35,10 +35,10 @@ const quizData = [
     answer: 'Pacific Ocean',
   },
   {
-    question: 'What is the chemical symbol for gold?',
+    question: 'What colour is banana?',
     id: 6,
-    options: ['AU', 'AG', 'CU', 'FE'],
-    answer: 'AU',
+    options: ['Red', 'Yellow', 'Green', 'Orange'],
+    answer: 'Yellow',
   },
   {
     question: 'Who painted the Mona Lisa?',
