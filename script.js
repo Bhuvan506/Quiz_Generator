@@ -93,6 +93,11 @@ function shuffleArray(array) {
   }
 }
 
+let voices = [];
+window.speechSynthesis.onvoiceschanged = function() {
+  voices = window.speechSynthesis.getVoices();
+};
+
 function displayQuestion() {
   const questionData = quizData[currentQuestion];
 
@@ -106,6 +111,8 @@ function displayQuestion() {
     if(textToSpeech)
     {
       const utterance=new SpeechSynthesisUtterance(textToSpeech);
+      utterance.volume = 2;
+      utterance.voice = voices[2];
       speechSynthesis.speak(utterance);
     }
   })
@@ -137,7 +144,9 @@ function displayQuestion() {
       const textToSpeech=shuffledOptions[i];
       if(textToSpeech)
       {
-        const utterance=new SpeechSynthesisUtterance(textToSpeech);
+        const utterance = new SpeechSynthesisUtterance(textToSpeech);
+        utterance.volume = 2;
+        utterance.voice = voices[2];
         speechSynthesis.speak(utterance);
       }
     })
@@ -180,6 +189,8 @@ function displayResult() {
   resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}!`;
   const speechSynthesis=window.speechSynthesis;
   const utterance=new SpeechSynthesisUtterance(resultContainer.innerHTML);
+  utterance.voice = voices[2];
+  utterance.volume = 2;
   speechSynthesis.speak(utterance);
 }
 
