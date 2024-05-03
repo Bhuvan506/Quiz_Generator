@@ -133,7 +133,7 @@ function displayQuestion() {
     option.appendChild(radio);
     option.appendChild(optionText);
     optionsElement.appendChild(option);
-    option.addEventListener('click',()=>{
+    option.addEventListener('dblclick',()=>{
       const textToSpeech=shuffledOptions[i];
       if(textToSpeech)
       {
